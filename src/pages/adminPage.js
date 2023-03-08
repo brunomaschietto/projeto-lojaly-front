@@ -1,17 +1,22 @@
 import Image from "next/image";
+import signupPic from "../../public/signupPic.svg";
+import lojaLyLogo from "../../public/lojaLyLogo.jpg";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import loginPic from "../../public/loginPic.svg";
-import lojaLyLogo from "../../public/lojaLyLogo.jpg";
 
-export default function Home() {
-  const router = useRouter();
 
+export default function Admin() {
+  const router = useRouter()
   return (
     <div className="min-h-screen bg-white flex">
       <div className="flex-1 bg-gray-900">
         <div className="flex h-full justify-center items-center">
-          <Image src={loginPic} alt="Login Logo" width={"400"} height={"400"} />
+          <Image
+            src={signupPic}
+            alt="Login Logo"
+            width={"400"}
+            height={"400"}
+          />
         </div>
       </div>
       <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px6 lg:flex-none lg:px-20 xl:px-24">
@@ -24,7 +29,7 @@ export default function Home() {
               height={"100"}
             />
             <h2 className="mt-6 text-3xl font-semibold text-primary">
-              Faça Login
+              Entrar como Administrador
             </h2>
           </div>
           <div className="mt-6">
@@ -44,18 +49,15 @@ export default function Home() {
                 />
               </div>
               <div className="mb-4">
-                <button
-                  className="inline-block w-full py-4 px-8 leading-none bg-primary hover:bg-secondary font-semibold rounded shadow"
-                  type='button'
-                  onClick={() => router.push('/homepage')}
-                >
+                <button type="button" onClick={() => router.push('/adminHomePage')} className="inline-block w-full py-4 px-8 leading-none bg-primary hover:bg-secondary font-semibold rounded shadow">
                   Entrar
                 </button>
               </div>
               <div className="mb-4">
+                <p>Não é administrador?</p>
                 <p>
-                  <Link href='/adminPage' className="text-primary">
-                    Entrar como Administrador
+                  <Link href="/" className="text-primary">
+                    Entre como funcionário
                   </Link>
                 </p>
               </div>
